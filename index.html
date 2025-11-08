@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Higher or Lower: TikTok PH Edition</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #1a202c; /* A dark gray-blue background */
+      }
+      @keyframes fade-in {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module">
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+// All application code is now bundled into this single script.
+// The original source files are no longer used.
+
+// --- Original content from data/creators.ts ---
+const creators = [
+  { name: 'Bella Poarch', handle: '@bellapoarch', followers: 94000000 },
+  { name: 'Niana Guerrero', handle: '@nianaguerrero', followers: 42300000 },
+  { name: 'Andrea Brillantes', handle: '@blythe', followers: 20100000 },
+  { name: 'Ivana Alawi', handle: '@ivanaalawi', followers: 19900000 },
+  { name: 'Vice Ganda', handle: '@unkabogableviceganda', followers: 18100000 },
+  { name: 'Sanya Lopez', handle: '@sanya_lopez', followers: 16100000 },
+  { name: 'Kyline Alcantara', handle: '@itskylinealcantara3', followers: 15900000 },
+  { name: 'Kathryn Bernardo', handle: '@bernardokath', followers: 14900000 },
+  { name: 'Catriona Gray', handle: '@catriona_gray', followers: 13300000 },
+  { name: 'Joshua Garcia', handle: '@iam.joshuagarcia', followers: 12900000 },
+  { name: 'Liza Soberano', handle: '@lizaasoberano', followers: 12300000 },
+  { name: 'Maymay Entrata', handle: '@maymayentrata', followers: 12100000 },
+  { name: 'Heart Evangelista', handle: '@lme85', followers: 11000000 },
+  { name: 'Ranz Kyle', handle: '@ranzkyle', followers: 10400000 },
+  { name: 'Kim Chiu', handle: '@kimchiu', followers: 10200000 },
+  { name: 'Anne Curtis', handle: '@annecurtissmith', followers: 9600000 },
+  { name: 'Donnalyn Bartolome', handle: '@donnalyn', followers: 9200000 },
+  { name: 'Alex Gonzaga', handle: '@Mscathygonzaga', followers: 8800000 },
+  { name: 'Francine Diaz', handle: '@francinediaz', followers: 8500000 },
+  { name: 'Daniel Padilla', handle: '@supremoe', followers: 8100000 },
+  { name: 'Bretman Rock', handle: '@bretmanrock', followers: 15300000 },
+  { name: 'Jelai Andres', handle: '@jelaiandrestiktok', followers: 10800000 },
+  { name: 'Zeinab Harake', handle: '@zeinabharake', followers: 12500000 },
+  { name: 'Herlene Budol', handle: '@herlene_budol', followers: 10100000 },
+  { name: 'Toni Fowler', handle: '@tonifowler', followers: 11200000 },
+  { name: 'James Reid', handle: '@jamesreid', followers: 5200000 },
+  { name: 'Nadine Lustre', handle: '@nadine', followers: 7100000 },
+  { name: 'Pia Wurtzbach', handle: '@piawurtzbach', followers: 7900000 },
+  { name: 'Maine Mendoza', handle: '@mainemendoza', followers: 6400000 },
+  { name: 'Alden Richards', handle: '@aldenrichards', followers: 6100000 },
+  { name: 'AC Bonifacio', handle: '@acbonifacio', followers: 8300000 },
+  { name: 'Yeng Constantino', handle: '@yengconstantino', followers: 5800000 },
+  { name: 'Janella Salvador', handle: '@janellasalvador', followers: 5500000 },
+  { name: 'Seth Fedelin', handle: '@sethfedelin', followers: 7700000 },
+  { name: 'Maja Salvador', handle: '@majasalvador', followers: 5300000 },
+  { name: 'Mimiyuuuh', handle: '@mimiyuuuh', followers: 4500000 },
+  { name: 'Sarah Geronimo', handle: '@sarahgeronimo', followers: 5000000 },
+];
+
+// --- Original content from components/LeaderboardModal.tsx ---
+const LeaderboardModal = ({ finalScore, leaderboard, onSave, onPlayAgain, onClose }) => {
+  const [alias, setAlias] = React.useState('');
+  const [isSaved, setIsSaved] = React.useState(false);
+
+  const handleSave = (e) => {
+    e.preventDefault();
+    if (alias.trim() && onSave && finalScore !== undefined) {
+      onSave(alias.trim());
+      setIsSaved(true);
+    }
+  };
+
+  const isGameOver = finalScore !== undefined;
+
+  return (
+    React.createElement("div", { className: "fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4 animate-fade-in" },
+      React.createElement("div", { className: "bg-gray-800 text-white rounded-2xl shadow-2xl p-6 md:p-8 w-full max-w-md relative border border-purple-500" },
+        React.createElement("button", { onClick: onClose, className: "absolute top-3 right-3 text-gray-400 hover:text-white text-2xl" }, "×"),
+        isGameOver && (
+          React.createElement("div", { className: "text-center mb-6" },
+            React.createElement("h2", { className: "text-3xl font-bold text-purple-400" }, "Game Over!"),
+            React.createElement("p", { className: "text-xl mt-2" }, "Your final score is"),
+            React.createElement("p", { className: "text-6xl font-bold my-3" }, finalScore)
+          )
+        ),
+        !isGameOver && (
+          React.createElement("h2", { className: "text-3xl font-bold text-center mb-6 text-purple-400" }, "Leaderboard")
+        ),
+        isGameOver && !isSaved && (
+          React.createElement("form", { onSubmit: handleSave, className: "flex flex-col gap-4 mb-6" },
+            React.createElement("input", {
+              type: "text",
+              value: alias,
+              onChange: (e) => setAlias(e.target.value),
+              placeholder: "Enter your alias",
+              maxLength: 15,
+              className: "w-full p-3 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500 text-center"
+            }),
+            React.createElement("button", {
+              type: "submit",
+              disabled: !alias.trim(),
+              className: "w-full bg-purple-600 hover:bg-purple-700 disabled:bg-gray-500 text-white font-bold py-3 rounded-lg transition-colors"
+            }, "Save to Leaderboard")
+          )
+        ),
+        React.createElement("div", { className: "space-y-2 max-h-60 overflow-y-auto pr-2" },
+            leaderboard.length > 0 ? (
+                leaderboard.map((entry, index) => (
+                    React.createElement("div", { key: index, className: "flex justify-between items-center bg-gray-700/50 p-3 rounded-lg" },
+                        React.createElement("span", { className: "font-bold text-lg" },
+                            `${index + 1}. ${entry.alias}`
+                        ),
+                        React.createElement("span", { className: "text-xl font-bold text-purple-400" }, entry.score)
+                    )
+                ))
+            ) : (
+                React.createElement("p", { className: "text-center text-gray-400 py-4" }, "No scores yet. Be the first!")
+            )
+        ),
+        isGameOver && onPlayAgain && (
+          React.createElement("button", {
+            onClick: onPlayAgain,
+            className: "w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg mt-6 transition-colors"
+          }, "Play Again")
+        )
+      )
+    )
+  );
+};
+
+// --- Original content from components/GameCard.tsx ---
+const formatFollowers = (followers) => {
+  if (followers >= 1_000_000) {
+    return `${(followers / 1_000_000).toFixed(1)}M`;
+  }
+  if (followers >= 1_000) {
+    return `${(followers / 1_000).toFixed(1)}k`;
+  }
+  return followers.toString();
+};
+
+const GameCard = ({ creator, showFollowers, onGuess, disabled = false, guessStatus = 'pending' }) => {
+  
+  const glowOverlayClass = () => {
+    if (guessStatus === 'correct') return 'bg-green-500/30';
+    if (guessStatus === 'incorrect') return 'bg-red-500/30';
+    return 'bg-gray-800';
+  };
+
+  const borderClass = () => {
+    if (guessStatus === 'correct') return 'border-green-400';
+    if (guessStatus === 'incorrect') return 'border-red-400';
+    return 'border-gray-700';
+  };
+
+  return (
+    React.createElement("div", { className: `w-1/2 h-full flex flex-col p-4 relative transition-all duration-500 border-2 ${borderClass()}` },
+      React.createElement("div", { className: `absolute inset-0 transition-colors duration-500 ${glowOverlayClass()}` }),
+      React.createElement("div", { className: "relative z-10 flex flex-col items-center justify-between text-white text-center w-full h-full" },
+        React.createElement("div", { className: "flex-grow flex flex-col items-center justify-center" },
+          React.createElement("h2", { className: "text-3xl md:text-5xl font-bold mb-2 text-center" }, creator.name),
+          React.createElement("p", { className: "text-xl md:text-3xl text-slate-300" }, creator.handle)
+        ),
+        React.createElement("div", { className: "h-40 flex flex-col items-center justify-center" },
+          showFollowers ? (
+            React.createElement("div", { className: "animate-fade-in" },
+              React.createElement("p", { className: "text-lg md:text-2xl text-slate-400 mb-1" }, "has"),
+              React.createElement("p", { className: "text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500" },
+                formatFollowers(creator.followers)
+              ),
+              React.createElement("p", { className: "text-lg md:text-2xl text-slate-400 mt-1" }, "followers")
+            )
+          ) : (
+            React.createElement(React.Fragment, null,
+              React.createElement("p", { className: "text-lg md:text-2xl text-slate-400 mb-4" }, "has"),
+              React.createElement("div", { className: "flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4" },
+                React.createElement("button", {
+                  onClick: () => onGuess && onGuess('higher'),
+                  disabled: disabled,
+                  className: "w-32 bg-green-500 hover:bg-green-600 disabled:bg-gray-500 text-white font-bold py-3 px-6 rounded-full text-lg transition-transform transform hover:scale-105 disabled:transform-none"
+                }, "Higher"),
+                React.createElement("button", {
+                  onClick: () => onGuess && onGuess('lower'),
+                  disabled: disabled,
+                  className: "w-32 bg-red-500 hover:bg-red-600 disabled:bg-gray-500 text-white font-bold py-3 px-6 rounded-full text-lg transition-transform transform hover:scale-105 disabled:transform-none"
+                }, "Lower")
+              )
+            )
+          )
+        )
+      )
+    )
+  );
+};
+
+
+// --- Original content from hooks/useGame.ts ---
+const LEADERBOARD_KEY = 'tiktok_ph_leaderboard';
+
+const shuffleArray = (array) => {
+  return [...array].sort(() => Math.random() - 0.5);
+};
+
+const useGame = () => {
+  const [creatorsState, setCreatorsState] = React.useState([]);
+  const [currentPair, setCurrentPair] = React.useState(null);
+  const [score, setScore] = React.useState(0);
+  const [guessStatus, setGuessStatus] = React.useState('pending');
+  const [showAnswer, setShowAnswer] = React.useState(false);
+  const [isGameOver, setGameOver] = React.useState(false);
+  const [leaderboard, setLeaderboard] = React.useState([]);
+
+  React.useEffect(() => {
+    const loadedLeaderboard = JSON.parse(localStorage.getItem(LEADERBOARD_KEY) || '[]');
+    setLeaderboard(loadedLeaderboard);
+  }, []);
+
+  const startGame = React.useCallback(() => {
+    setScore(0);
+    setGameOver(false);
+    setGuessStatus('pending');
+    setShowAnswer(false);
+    const shuffled = shuffleArray(creators);
+    const firstPair = [shuffled[0], shuffled[1]];
+    setCreatorsState(shuffled.slice(2));
+    setCurrentPair(firstPair);
+  }, []);
+
+  const handleNextRound = React.useCallback(() => {
+    setShowAnswer(false);
+    setGuessStatus('pending');
+
+    if (currentPair && creatorsState.length > 0) {
+        const nextCreator = creatorsState[0];
+        const newPair = [currentPair[1], nextCreator];
+        setCurrentPair(newPair);
+        setCreatorsState(prev => prev.slice(1));
+    } else {
+        setGameOver(true);
+    }
+  }, [creatorsState, currentPair]);
+
+  const handleGuess = React.useCallback((guess) => {
+    if (!currentPair || showAnswer) return;
+
+    const [creatorA, creatorB] = currentPair;
+    const isHigher = creatorB.followers > creatorA.followers;
+    let correct = false;
+
+    if (guess === 'higher' && isHigher) {
+      correct = true;
+    } else if (guess === 'lower' && !isHigher) {
+      correct = true;
+    }
+    
+    setShowAnswer(true);
+
+    if (correct) {
+      setScore(prev => prev + 1);
+      setGuessStatus('correct');
+      setTimeout(() => {
+        handleNextRound();
+      }, 2000);
+    } else {
+      setGuessStatus('incorrect');
+      setTimeout(() => {
+        setGameOver(true);
+      }, 2000);
+    }
+  }, [currentPair, showAnswer, handleNextRound]);
+
+  const saveScore = React.useCallback((alias) => {
+    const newEntry = { alias, score, date: new Date().toISOString() };
+    const updatedLeaderboard = [...leaderboard, newEntry]
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 10);
+    
+    setLeaderboard(updatedLeaderboard);
+    localStorage.setItem(LEADERBOARD_KEY, JSON.stringify(updatedLeaderboard));
+  }, [score, leaderboard]);
+
+  return {
+    currentPair,
+    score,
+    handleGuess,
+    guessStatus,
+    showAnswer,
+    isGameOver,
+    startGame,
+    leaderboard,
+    saveScore,
+  };
+};
+
+// --- Original content from App.tsx ---
+const App = () => {
+  const {
+    currentPair,
+    score,
+    handleGuess,
+    guessStatus,
+    showAnswer,
+    isGameOver,
+    startGame,
+    leaderboard,
+    saveScore,
+  } = useGame();
+
+  const [isLeaderboardVisible, setLeaderboardVisible] = React.useState(false);
+
+  const renderGameContent = () => {
+    if (isGameOver) {
+      return (
+        React.createElement(LeaderboardModal, {
+          finalScore: score,
+          leaderboard: leaderboard,
+          onSave: saveScore,
+          onPlayAgain: startGame,
+          onClose: () => setLeaderboardVisible(false)
+        })
+      );
+    }
+
+    if (!currentPair) {
+      return (
+        React.createElement("div", { className: "flex flex-col items-center justify-center h-full text-white" },
+            React.createElement("h1", { className: "text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600" }, "Higher or Lower"),
+            React.createElement("h2", { className: "text-xl md:text-2xl mb-8 text-slate-300" }, "TikTok PH Edition"),
+            React.createElement("button", {
+                onClick: startGame,
+                className: "bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-xl transition-transform transform hover:scale-105 shadow-lg"
+            }, "Start Game")
+        )
+      );
+    }
+
+    const [creatorA, creatorB] = currentPair;
+
+    return (
+      React.createElement("div", { className: "relative w-full h-full flex items-center justify-center" },
+        React.createElement(GameCard, { creator: creatorA, showFollowers: true }),
+        React.createElement("div", { className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-gray-900 bg-opacity-80 backdrop-blur-sm p-3 rounded-full border-2 border-purple-500 shadow-lg" },
+          React.createElement("span", { className: "text-white font-bold text-2xl" }, "VS")
+        ),
+        React.createElement("div", { className: "absolute z-20 top-4 right-4 bg-gray-900 bg-opacity-80 backdrop-blur-sm text-white py-2 px-4 rounded-lg shadow-md" },
+            React.createElement("p", { className: "font-bold text-lg" }, "Streak: ", score)
+        ),
+        React.createElement(GameCard, { 
+          creator: creatorB, 
+          showFollowers: showAnswer, 
+          onGuess: handleGuess,
+          disabled: showAnswer,
+          guessStatus: guessStatus
+        })
+      )
+    );
+  };
+  
+  return (
+    React.createElement("div", { className: "bg-gray-900 min-h-screen w-full flex flex-col items-center justify-center font-sans overflow-hidden p-4" },
+      React.createElement("div", { className: "absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 via-purple-900/40 to-gray-900" }),
+      React.createElement("main", { className: "w-full max-w-7xl h-[80vh] md:h-[600px] relative text-center" },
+        renderGameContent()
+      ),
+      !isGameOver && currentPair && (
+          React.createElement("button", { 
+            onClick: () => setLeaderboardVisible(true),
+            className: "absolute bottom-4 right-4 bg-slate-700 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded-full transition-transform transform hover:scale-105 z-30"
+          }, "Leaderboard")
+        ),
+      isLeaderboardVisible && !isGameOver && (
+        React.createElement(LeaderboardModal, {
+          leaderboard: leaderboard,
+          onClose: () => setLeaderboardVisible(false)
+        })
+      )
+    )
+  );
+};
+
+
+// --- Original content from index.tsx ---
+const rootElement = document.getElementById('root');
+if (!rootElement) {
+  throw new Error("Could not find root element to mount to");
+}
+
+const root = ReactDOM.createRoot(rootElement);
+root.render(
+  React.createElement(React.StrictMode, null,
+    React.createElement(App, null)
+  )
+);
+    </script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
