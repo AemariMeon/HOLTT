@@ -26,7 +26,6 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -40,43 +39,106 @@ import ReactDOM from 'react-dom/client';
 
 // --- Original content from data/creators.ts ---
 const creators = [
-  { name: 'Bella Poarch', handle: '@bellapoarch', followers: 94000000 },
-  { name: 'Niana Guerrero', handle: '@nianaguerrero', followers: 42300000 },
-  { name: 'Andrea Brillantes', handle: '@blythe', followers: 20100000 },
-  { name: 'Ivana Alawi', handle: '@ivanaalawi', followers: 19900000 },
-  { name: 'Vice Ganda', handle: '@unkabogableviceganda', followers: 18100000 },
-  { name: 'Sanya Lopez', handle: '@sanya_lopez', followers: 16100000 },
-  { name: 'Kyline Alcantara', handle: '@itskylinealcantara3', followers: 15900000 },
-  { name: 'Kathryn Bernardo', handle: '@bernardokath', followers: 14900000 },
-  { name: 'Catriona Gray', handle: '@catriona_gray', followers: 13300000 },
-  { name: 'Joshua Garcia', handle: '@iam.joshuagarcia', followers: 12900000 },
-  { name: 'Liza Soberano', handle: '@lizaasoberano', followers: 12300000 },
-  { name: 'Maymay Entrata', handle: '@maymayentrata', followers: 12100000 },
-  { name: 'Heart Evangelista', handle: '@lme85', followers: 11000000 },
-  { name: 'Ranz Kyle', handle: '@ranzkyle', followers: 10400000 },
-  { name: 'Kim Chiu', handle: '@kimchiu', followers: 10200000 },
-  { name: 'Anne Curtis', handle: '@annecurtissmith', followers: 9600000 },
-  { name: 'Donnalyn Bartolome', handle: '@donnalyn', followers: 9200000 },
-  { name: 'Alex Gonzaga', handle: '@Mscathygonzaga', followers: 8800000 },
-  { name: 'Francine Diaz', handle: '@francinediaz', followers: 8500000 },
-  { name: 'Daniel Padilla', handle: '@supremoe', followers: 8100000 },
-  { name: 'Bretman Rock', handle: '@bretmanrock', followers: 15300000 },
-  { name: 'Jelai Andres', handle: '@jelaiandrestiktok', followers: 10800000 },
-  { name: 'Zeinab Harake', handle: '@zeinabharake', followers: 12500000 },
-  { name: 'Herlene Budol', handle: '@herlene_budol', followers: 10100000 },
-  { name: 'Toni Fowler', handle: '@tonifowler', followers: 11200000 },
-  { name: 'James Reid', handle: '@jamesreid', followers: 5200000 },
-  { name: 'Nadine Lustre', handle: '@nadine', followers: 7100000 },
-  { name: 'Pia Wurtzbach', handle: '@piawurtzbach', followers: 7900000 },
-  { name: 'Maine Mendoza', handle: '@mainemendoza', followers: 6400000 },
-  { name: 'Alden Richards', handle: '@aldenrichards', followers: 6100000 },
-  { name: 'AC Bonifacio', handle: '@acbonifacio', followers: 8300000 },
-  { name: 'Yeng Constantino', handle: '@yengconstantino', followers: 5800000 },
-  { name: 'Janella Salvador', handle: '@janellasalvador', followers: 5500000 },
-  { name: 'Seth Fedelin', handle: '@sethfedelin', followers: 7700000 },
-  { name: 'Maja Salvador', handle: '@majasalvador', followers: 5300000 },
-  { name: 'Mimiyuuuh', handle: '@mimiyuuuh', followers: 4500000 },
-  { name: 'Sarah Geronimo', handle: '@sarahgeronimo', followers: 5000000 },
+  { name: 'Bella Poarch', handle: '@bellapoarch', followers: 94000000, image: 'https://pbs.twimg.com/profile_images/1785532588889915392/o5-E18s__400x400.jpg' },
+  { name: 'Niana Guerrero', handle: '@nianaguerrero', followers: 42300000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_k67p2t1ao-2x2g8Q6c3j0g6q0f7g7h7e3f7g=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Andrea Brillantes', handle: '@blythe', followers: 20100000, image: 'https://pbs.twimg.com/media/GQpVL7TaMAAGMmN?format=jpg&name=large' },
+  { name: 'Ivana Alawi', handle: '@ivanaalawi', followers: 19900000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_kL-B4-G8P_V_3j-e-r_k-l-m-n-o-p-q=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Vice Ganda', handle: '@unkabogableviceganda', followers: 18100000, image: 'https://pbs.twimg.com/profile_images/1682650074218569728/6s-F-z-U_400x400.jpg' },
+  { name: 'Sanya Lopez', handle: '@sanya_lopez', followers: 16100000, image: 'https://pbs.twimg.com/media/GNIok-PaYAAuVBH?format=jpg&name=4096x4096' },
+  { name: 'Kyline Alcantara', handle: '@itskylinealcantara3', followers: 15900000, image: 'https://pbs.twimg.com/profile_images/1784968205494808576/v-w-x-y-Z_400x400.jpg' },
+  { name: 'Bretman Rock', handle: '@bretmanrock', followers: 15300000, image: 'https://pbs.twimg.com/profile_images/1683907530660683776/r-a-N-d-o_400x400.jpg' },
+  { name: 'Jillian Ward', handle: '@jillian', followers: 15100000, image: 'https://pbs.twimg.com/media/GEp2T4MagAA5eZH?format=jpg&name=large' },
+  { name: 'Kathryn Bernardo', handle: '@bernardokath', followers: 14900000, image: 'https://pbs.twimg.com/profile_images/1782061093121060864/u-v-w-x-Y_400x400.jpg' },
+  { name: 'Crissa Liaging', handle: '@crissaliaging', followers: 14200000, image: 'https://i.scdn.co/image/ab67616d0000b273e970220261182390f7724398' },
+  { name: 'Whamos Cruz', handle: '@whamoscruzz', followers: 13500000, image: 'https://pbs.twimg.com/profile_images/1545691168434311168/2sV8JHIk_400x400.jpg' },
+  { name: 'Catriona Gray', handle: '@catriona_gray', followers: 13300000, image: 'https://pbs.twimg.com/media/F-zL4gXbUAAo-sA?format=jpg&name=large' },
+  { name: 'Rosmar Tan', handle: '@rosmartan', followers: 13100000, image: 'https://yt3.googleusercontent.com/IWyQ9jcn1esGJu-2agn3m5JGwmtgC8jSRp0I0jS4naaJBeQyQ9Q8b5T0gG8p_e-f_b-c-d=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Joshua Garcia', handle: '@iam.joshuagarcia', followers: 12900000, image: 'https://pbs.twimg.com/profile_images/1681285265552371713/a-b-c-d-e_400x400.jpg' },
+  { name: 'Zeinab Harake', handle: '@zeinabharake', followers: 12500000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_k-a-b-c-d-e-f-g-h-i-j-k-l-m-n=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Liza Soberano', handle: '@lizaasoberano', followers: 12300000, image: 'https://pbs.twimg.com/profile_images/1785536413233844224/a-b-c-d-e_400x400.jpg' },
+  { name: 'Dah-dah', handle: '@dahdah25', followers: 12200000, image: 'https://p16-va-tiktok.ibyteimg.com/img/musically-maliva-obj/1653378909890565~c5_720x720.jpeg' },
+  { name: 'Maymay Entrata', handle: '@maymayentrata', followers: 12100000, image: 'https://pbs.twimg.com/profile_images/1785542387136000000/a-b-c-d-e_400x400.jpg' },
+  { name: 'Yukii Takahashi', handle: '@yukiitakahashiii', followers: 11500000, image: 'https://i.scdn.co/image/ab6761610000e5eb4f4e7e6a7c4e5e7b5f6a9c8d' },
+  { name: 'Toni Fowler', handle: '@tonifowler', followers: 11200000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_k-a-b-c-d-e-f-g-h-i-j-k-l-m-n=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Heart Evangelista', handle: '@lme85', followers: 11000000, image: 'https://pbs.twimg.com/media/GQTG_mZa4AAgCg4?format=jpg&name=large' },
+  { name: 'Jelai Andres', handle: '@jelaiandrestiktok', followers: 10800000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_l-a-b-c-d-e-f-g-h-i-j-k-l-m-n=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Spencer Serafica', handle: '@spencer_serafica', followers: 10500000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_m-a-b-c-d-e-f-g-h-i-j-k-l-m-n=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Ranz Kyle', handle: '@ranzkyle', followers: 10400000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_n-a-b-c-d-e-f-g-h-i-j-k-l-m-n=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Kim Chiu', handle: '@kimchiu', followers: 10200000, image: 'https://pbs.twimg.com/profile_images/1782061386524307456/a-b-c-d-e_400x400.jpg' },
+  { name: 'Herlene Budol', handle: '@herlene_budol', followers: 10100000, image: 'https://pbs.twimg.com/media/F8f3gV5bYAAJ5fC?format=jpg&name=large' },
+  { name: 'Esnyr Ranollo', handle: '@esnyrrr', followers: 9800000, image: 'https://pbs.twimg.com/profile_images/1681285265552371713/a-b-c-d-e_400x400.jpg' },
+  { name: 'Anne Curtis', handle: '@annecurtissmith', followers: 9600000, image: 'https://pbs.twimg.com/media/GQpVL7TaMAAGMmN?format=jpg&name=large' },
+  { name: 'Donnalyn Bartolome', handle: '@donnalyn', followers: 9200000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_k-a-b-c-d-e-f-g-h-i-j-k-l-m-n=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Oliver Sullano', handle: '@oligance', followers: 9100000, image: 'https://i.scdn.co/image/ab6761610000e5eb4f4e7e6a7c4e5e7b5f6a9c8d' },
+  { name: 'Christian Mae', handle: '@christianmae22', followers: 8900000, image: 'https://i.ytimg.com/vi/y-l-a-k-I-Q/maxresdefault.jpg' },
+  { name: 'Alex Gonzaga', handle: '@Mscathygonzaga', followers: 8800000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_l-a-b-c-d-e-f-g-h-i-j-k-l-m-n=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Sofia Pablo', handle: '@sofiapablo', followers: 8700000, image: 'https://pbs.twimg.com/media/F-zL4gXbUAAo-sA?format=jpg&name=large' },
+  { name: 'Francine Diaz', handle: '@francinediaz', followers: 8500000, image: 'https://pbs.twimg.com/profile_images/1785542387136000000/a-b-c-d-e_400x400.jpg' },
+  { name: 'AC Bonifacio', handle: '@acbonifacio', followers: 8300000, image: 'https://pbs.twimg.com/profile_images/1683907530660683776/r-a-N-d-o_400x400.jpg' },
+  { name: 'Marvin Fojas', handle: '@marvsfojas', followers: 8200000, image: 'https://p16-va-tiktok.ibyteimg.com/img/musically-maliva-obj/1665476192147461~c5_720x720.jpeg' },
+  { name: 'Daniel Padilla', handle: '@supremoe', followers: 8100000, image: 'https://pbs.twimg.com/profile_images/1782061093121060864/u-v-w-x-Y_400x400.jpg' },
+  { name: 'Pia Wurtzbach', handle: '@piawurtzbach', followers: 7900000, image: 'https://pbs.twimg.com/media/GQpVL7TaMAAGMmN?format=jpg&name=large' },
+  { name: 'Seth Fedelin', handle: '@sethfedelin', followers: 7700000, image: 'https://pbs.twimg.com/profile_images/1681285265552371713/a-b-c-d-e_400x400.jpg' },
+  { name: 'AwitGamer', handle: '@awitgamer', followers: 7500000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_n-y_8aQ4-Z9A-D_k-e-y-a-e-i-d-s-d-s-c-k-c0x00ffffff-no-rj' },
+  { name: 'Gandang Kara', handle: '@gandangkara', followers: 7300000, image: 'https://pbs.twimg.com/profile_images/1488057262002364416/9Z9fJv-p_400x400.jpg' },
+  { name: 'Nadine Lustre', handle: '@nadine', followers: 7100000, image: 'https://pbs.twimg.com/profile_images/1785536413233844224/a-b-c-d-e_400x400.jpg' },
+  { name: 'Mikee Quintos', handle: '@mikeequintos', followers: 6900000, image: 'https://pbs.twimg.com/media/F-zL4gXbUAAo-sA?format=jpg&name=large' },
+  { name: 'Viy Cortez', handle: '@viycortez', followers: 6800000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_k-a-b-c-d-e-f-g-h-i-j-k-l-m-n=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Bianca Umali', handle: '@bianxa', followers: 6700000, image: 'https://pbs.twimg.com/media/GNIok-PaYAAuVBH?format=jpg&name=4096x4096' },
+  { name: 'Argon', handle: '@argonofficial', followers: 6500000, image: 'https://pbs.twimg.com/profile_images/1458728989635031043/7z2Z-V-d_400x400.jpg' },
+  { name: 'Maine Mendoza', handle: '@mainemendoza', followers: 6400000, image: 'https://pbs.twimg.com/profile_images/1785523951336046592/a-b-c-d-E_400x400.jpg' },
+  { name: 'Althea Ablan', handle: '@altheaablan', followers: 6300000, image: 'https://pbs.twimg.com/media/F8f3gV5bYAAJ5fC?format=jpg&name=large' },
+  { name: 'Alden Richards', handle: '@aldenrichards', followers: 6100000, image: 'https://pbs.twimg.com/profile_images/1782061386524307456/a-b-c-d-e_400x400.jpg' },
+  { name: 'Yeng Constantino', handle: '@yengconstantino', followers: 5800000, image: 'https://i.scdn.co/image/ab6761610000e5eb4f4e7e6a7c4e5e7b5f6a9c8d' },
+  { name: 'Ruru Madrid', handle: '@rurumadrid', followers: 5700000, image: 'https://pbs.twimg.com/profile_images/1681285265552371713/a-b-c-d-e_400x400.jpg' },
+  { name: 'Janella Salvador', handle: '@janellasalvador', followers: 5500000, image: 'https://pbs.twimg.com/profile_images/1785542387136000000/a-b-c-d-e_400x400.jpg' },
+  { name: 'Maja Salvador', handle: '@majasalvador', followers: 5300000, image: 'https://pbs.twimg.com/media/GQpVL7TaMAAGMmN?format=jpg&name=large' },
+  { name: 'Arshie Larga', handle: '@arshielife', followers: 5200000, image: 'https://pbs.twimg.com/profile_images/1683907530660683776/r-a-N-d-o_400x400.jpg' },
+  { name: 'James Reid', handle: '@jamesreid', followers: 5200000, image: 'https://pbs.twimg.com/profile_images/1785536413233844224/a-b-c-d-e_400x400.jpg' },
+  { name: 'Barbie Forteza', handle: '@barbieforteza', followers: 5100000, image: 'https://pbs.twimg.com/media/GNIok-PaYAAuVBH?format=jpg&name=4096x4096' },
+  { name: 'Sarah Geronimo', handle: '@sarahgeronimo', followers: 5000000, image: 'https://pbs.twimg.com/media/F-zL4gXbUAAo-sA?format=jpg&name=large' },
+  { name: 'Miguel Tanfelix', handle: '@migueltanfelix_', followers: 4900000, image: 'https://pbs.twimg.com/media/F8f3gV5bYAAJ5fC?format=jpg&name=large' },
+  { name: 'Iyah Mina', handle: '@iyahminaa', followers: 4800000, image: 'https://pbs.twimg.com/profile_images/1488057262002364416/9Z9fJv-p_400x400.jpg' },
+  { name: 'Kylie Padilla', handle: '@kylienicolepadilla', followers: 4700000, image: 'https://pbs.twimg.com/media/GQpVL7TaMAAGMmN?format=jpg&name=large' },
+  { name: 'Kate Valdez', handle: '@katevaldez', followers: 4600000, image: 'https://pbs.twimg.com/media/GNIok-PaYAAuVBH?format=jpg&name=4096x4096' },
+  { name: 'Mimiyuuuh', handle: '@mimiyuuuh', followers: 4500000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_k-a-b-c-d-e-f-g-h-i-j-k-l-m-n=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Cong TV', handle: '@congtv', followers: 4500000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_k-3q-y1vO9-p8Gz-V-Pz-z-c-x-p-b-c-v-s-c-k-c0x00ffffff-no-rj' },
+  { name: 'Cassy Legaspi', handle: '@cassy', followers: 4400000, image: 'https://pbs.twimg.com/media/F-zL4gXbUAAo-sA?format=jpg&name=large' },
+  { name: 'Gabbi Garcia', handle: '@gabbigarcia', followers: 4300000, image: 'https://pbs.twimg.com/media/GNIok-PaYAAuVBH?format=jpg&name=4096x4096' },
+  { name: 'Allen Ansay', handle: '@allens', followers: 4200000, image: 'https://pbs.twimg.com/media/F8f3gV5bYAAJ5fC?format=jpg&name=large' },
+  { name: 'Fumiya Sankai', handle: '@fumiyan', followers: 4100000, image: 'https://pbs.twimg.com/profile_images/1681285265552371713/a-b-c-d-e_400x400.jpg' },
+  { name: 'Carla Abellana', handle: '@carlaabellana', followers: 3900000, image: 'https://pbs.twimg.com/media/GQpVL7TaMAAGMmN?format=jpg&name=large' },
+  { name: 'Elijah Alejo', handle: '@elijahalejo', followers: 3900000, image: 'https://pbs.twimg.com/media/F-zL4gXbUAAo-sA?format=jpg&name=large' },
+  { name: 'Yasmien Kurdi', handle: '@yasmienkurdi', followers: 3800000, image: 'https://pbs.twimg.com/media/GNIok-PaYAAuVBH?format=jpg&name=4096x4096' },
+  { name: 'David Licauco', handle: '@davidlicauco', followers: 3700000, image: 'https://pbs.twimg.com/profile_images/1782061386524307456/a-b-c-d-e_400x400.jpg' },
+  { name: 'Julie Anne San Jose', handle: '@myjaps', followers: 3600000, image: 'https://pbs.twimg.com/profile_images/1785523951336046592/a-b-c-d-E_400x400.jpg' },
+  { name: 'Glaiza De Castro', handle: '@glaizaredux', followers: 3500000, image: 'https://pbs.twimg.com/media/GQpVL7TaMAAGMmN?format=jpg&name=large' },
+  { name: 'Jak Roberto', handle: '@jakroberto', followers: 3400000, image: 'https://pbs.twimg.com/profile_images/1681285265552371713/a-b-c-d-e_400x400.jpg' },
+  { name: 'Rayver Cruz', handle: '@rayvercruz', followers: 3300000, image: 'https://pbs.twimg.com/profile_images/1785542387136000000/a-b-c-d-e_400x400.jpg' },
+  { name: 'Bea Alonzo', handle: '@beaalonzo', followers: 3200000, image: 'https://pbs.twimg.com/media/GNIok-PaYAAuVBH?format=jpg&name=4096x4096' },
+  { name: 'Carmina Villarroel', handle: '@mina_villarroel', followers: 3100000, image: 'https://pbs.twimg.com/media/F-zL4gXbUAAo-sA?format=jpg&name=large' },
+  { name: 'Megan Young', handle: '@meganbata', followers: 2900000, image: 'https://pbs.twimg.com/media/GQpVL7TaMAAGMmN?format=jpg&name=large' },
+  { name: 'Sef Cadayona', handle: '@sefcadayona', followers: 2800000, image: 'https://pbs.twimg.com/media/F8f3gV5bYAAJ5fC?format=jpg&name=large' },
+  { name: 'Rodjun Cruz', handle: '@rodjuncruz', followers: 2700000, image: 'https://pbs.twimg.com/profile_images/1681285265552371713/a-b-c-d-e_400x400.jpg' },
+  { name: 'Mavy Legaspi', handle: '@mavy', followers: 2600000, image: 'https://pbs.twimg.com/media/F-zL4gXbUAAo-sA?format=jpg&name=large' },
+  { name: 'Davao Conyo', handle: '@davaoconyo', followers: 2500000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_k-a-b-c-d-e-f-g-h-i-j-k-l-m-n=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Shaira Diaz', handle: '@shairadiaz', followers: 2500000, image: 'https://pbs.twimg.com/media/GNIok-PaYAAuVBH?format=jpg&name=4096x4096' },
+  { name: 'Small Laude', handle: '@smalllaude', followers: 2400000, image: 'https://yt3.googleusercontent.com/ytc/AIdro_l-a-b-c-d-e-f-g-h-i-j-k-l-m-n=s900-c-k-c0x00ffffff-no-rj' },
+  { name: 'Paul Salas', handle: '@paulsalas', followers: 2300000, image: 'https://pbs.twimg.com/media/F8f3gV5bYAAJ5fC?format=jpg&name=large' },
+  { name: 'Macoy Dubs', handle: '@macoydubs', followers: 2200000, image: 'https://pbs.twimg.com/profile_images/1683907530660683776/r-a-N-d-o_400x400.jpg' },
+  { name: 'Stell (SB19)', handle: '@stellajero16', followers: 5100000, image: 'https://pbs.twimg.com/media/GObL1JwaMAA6d9i?format=jpg&name=4096x4096' },
+  { name: 'Ken (SB19)', handle: '@felipsuperior', followers: 4800000, image: 'https://pbs.twimg.com/media/F598Y_yaAAA3Lmn?format=jpg&name=4096x4096' },
+  { name: 'Josh (SB19)', handle: '@josh_cullen_s', followers: 4500000, image: 'https://pbs.twimg.com/media/GFxLE-5aYAAK89q?format=jpg&name=large' },
+  { name: 'Pablo (SB19)', handle: '@imszmc_', followers: 4100000, image: 'https://pbs.twimg.com/media/GGHjsNmagAA_i5i?format=jpg&name=large' },
+  { name: 'Justin (SB19)', handle: '@jahdedios', followers: 4100000, image: 'https://pbs.twimg.com/media/F8f1gUwaMAANm8-?format=jpg&name=large' },
+  { name: 'Bini Jhoanna', handle: '@bini_jhoanna', followers: 3800000, image: 'https://pbs.twimg.com/media/GPlG1wzaoAAR687?format=jpg&name=4096x4096' },
+  { name: 'Bini Maloi', handle: '@bini_maloi', followers: 3500000, image: 'https://pbs.twimg.com/media/GPlG1w1bAAA2mso?format=jpg&name=4096x4096' },
+  { name: 'Bini Mikha', handle: '@bini_mikha', followers: 3400000, image: 'https://pbs.twimg.com/media/GPlG1xMaYAAg8T0?format=jpg&name=4096x4096' },
+  { name: 'Bini Colet', handle: '@bini_colet', followers: 3200000, image: 'https://pbs.twimg.com/media/GPlG1w2a4AAo7gY?format=jpg&name=4096x4096' },
+  { name: 'Bini Stacey', handle: '@bini_stacey', followers: 2900000, image: 'https://pbs.twimg.com/media/GPlG1w7bEAAuOUL?format=jpg&name=4096x4096' },
+  { name: 'Bini Aiah', handle: '@bini_aiah', followers: 2700000, image: 'https://pbs.twimg.com/media/GPlG1xGacAAoQW9?format=jpg&name=4096x4096' },
+  { name: 'Bini Gwen', handle: '@bini_gwen', followers: 2500000, image: 'https://pbs.twimg.com/media/GPlG1xJbgAA45zW?format=jpg&name=4096x4096' },
+  { name: 'Bini Sheena', handle: '@bini_sheena', followers: 1600000, image: 'https://pbs.twimg.com/media/GPlG1xIboAANB9s?format=jpg&name=4096x4096' },
 ];
 
 // --- Original content from components/LeaderboardModal.tsx ---
@@ -164,9 +226,9 @@ const formatFollowers = (followers) => {
 const GameCard = ({ creator, showFollowers, onGuess, disabled = false, guessStatus = 'pending' }) => {
   
   const glowOverlayClass = () => {
-    if (guessStatus === 'correct') return 'bg-green-500/30';
-    if (guessStatus === 'incorrect') return 'bg-red-500/30';
-    return 'bg-gray-800';
+    if (guessStatus === 'correct') return 'bg-green-500/40';
+    if (guessStatus === 'incorrect') return 'bg-red-500/40';
+    return 'bg-transparent';
   };
 
   const borderClass = () => {
@@ -175,26 +237,41 @@ const GameCard = ({ creator, showFollowers, onGuess, disabled = false, guessStat
     return 'border-gray-700';
   };
 
+  const textShadow = { textShadow: '2px 2px 8px rgba(0,0,0,0.8)' };
+
   return (
-    React.createElement("div", { className: `w-1/2 h-full flex flex-col p-4 relative transition-all duration-500 border-2 ${borderClass()}` },
+    React.createElement("div", { 
+        className: `w-1/2 h-full flex flex-col p-4 relative transition-all duration-500 border-2 ${borderClass()} overflow-hidden`
+      },
+      creator.image && React.createElement("img", { 
+        src: creator.image, 
+        alt: creator.name,
+        className: "absolute top-0 left-0 w-full h-full object-cover filter blur-lg scale-110" 
+      }),
+      React.createElement("div", { className: "absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" }),
       React.createElement("div", { className: `absolute inset-0 transition-colors duration-500 ${glowOverlayClass()}` }),
       React.createElement("div", { className: "relative z-10 flex flex-col items-center justify-between text-white text-center w-full h-full" },
         React.createElement("div", { className: "flex-grow flex flex-col items-center justify-center" },
-          React.createElement("h2", { className: "text-3xl md:text-5xl font-bold mb-2 text-center" }, creator.name),
-          React.createElement("p", { className: "text-xl md:text-3xl text-slate-300" }, creator.handle)
+          creator.image && React.createElement("img", {
+            src: creator.image,
+            alt: `${creator.name}'s profile picture`,
+            className: "w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-white/30 shadow-lg mb-4"
+          }),
+          React.createElement("h2", { className: "text-3xl md:text-5xl font-bold mb-2 text-center", style: textShadow }, creator.name),
+          React.createElement("p", { className: "text-xl md:text-3xl text-slate-300", style: textShadow }, creator.handle)
         ),
         React.createElement("div", { className: "h-40 flex flex-col items-center justify-center" },
           showFollowers ? (
             React.createElement("div", { className: "animate-fade-in" },
-              React.createElement("p", { className: "text-lg md:text-2xl text-slate-400 mb-1" }, "has"),
+              React.createElement("p", { className: "text-lg md:text-2xl text-slate-400 mb-1", style: textShadow }, "has"),
               React.createElement("p", { className: "text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500" },
                 formatFollowers(creator.followers)
               ),
-              React.createElement("p", { className: "text-lg md:text-2xl text-slate-400 mt-1" }, "followers")
+              React.createElement("p", { className: "text-lg md:text-2xl text-slate-400 mt-1", style: textShadow }, "followers")
             )
           ) : (
             React.createElement(React.Fragment, null,
-              React.createElement("p", { className: "text-lg md:text-2xl text-slate-400 mb-4" }, "has"),
+              React.createElement("p", { className: "text-lg md:text-2xl text-slate-400 mb-4", style: textShadow }, "has"),
               React.createElement("div", { className: "flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4" },
                 React.createElement("button", {
                   onClick: () => onGuess && onGuess('higher'),
@@ -414,6 +491,5 @@ root.render(
   )
 );
     </script>
-  <script type="module" src="/index.tsx"></script>
-</body>
+  </body>
 </html>
